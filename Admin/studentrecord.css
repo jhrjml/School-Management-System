@@ -1,0 +1,77 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+.page-wrapper {
+  width: 100%;
+}
+
+.top-bar {
+  display: flex;
+  align-items: center;
+  padding: 20px 20px;
+  background: #aec8ff;
+  color: rgb(0, 0, 0);
+  justify-content: space-between;
+}
+
+.left-side {
+  display: flex;
+  align-items: center;
+  gap: 5pxpx;
+}
+
+.back-icon {
+  font-size: 28px;
+  cursor: pointer;
+  margin-right: 15px;
+}
+
+.student-info,
+.grade-record {
+  background: #fff;
+  margin: 20px;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  font-size: larger;
+}
+
+h2 {
+  margin-bottom: 15px;
+  color: black;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.grade-table {
+  border-collapse: collapse;
+  margin-top: 20px;
+  width: 100%;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.grade-table th,
+.grade-table td {
+  padding: 10px 15px;
+  border-bottom: 1px solid #ffffff;
+}
+
+.grade-table th {
+  background-color: #aec8ff;
+  color: rgb(0, 0, 0);
+}
+
+.hidden {
+  display: none;
+}

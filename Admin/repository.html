@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Attendance Repository</title>
+
+    <link rel="stylesheet" href="repositorystyle.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <nav class="sidebar">
+      <div class="sidebar-header">
+        <h3><i class="fas fa-school"></i> SMS Teacher</h3>
+      </div>
+      <ul class="nav-links">
+        <li>
+          <a href="teacherHomepage.html"
+            ><i class="fas fa-home"></i> Homepage</a
+          >
+        </li>
+        <li>
+          <a href="grade.html"><i class="fas fa-star"></i> Manage Grades</a>
+        </li>
+        <li>
+          <a href="attendance.html"
+            ><i class="fas fa-calendar-check"></i> Manage Attendance</a
+          >
+        </li>
+        <li>
+          <a href="repository.html" class="active"
+            ><i class="fas fa-archive"></i> Repository</a
+          >
+        </li>
+      </ul>
+    </nav>
+
+    <div class="main-content">
+      <header>
+        <h2>Attendance Repository</h2>
+      </header>
+
+      <main>
+        <div class="filter-container">
+          <div class="filter-group">
+            <label>Grade & Section</label>
+            <select id="filterSection"></select>
+          </div>
+
+          <div class="filter-group">
+            <label>Month</label>
+            <select id="filterMonth">
+              <option value="">Select Month</option>
+              <option>January</option>
+              <option>February</option>
+              <option>March</option>
+              <option>April</option>
+              <option>May</option>
+              <option>June</option>
+              <option>July</option>
+              <option>August</option>
+              <option>September</option>
+              <option>October</option>
+              <option>November</option>
+              <option>December</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <label>School Year</label>
+            <select id="filterSY"></select>
+          </div>
+
+          <button id="searchBtn" class="btn-search">
+            <i class="fas fa-search"></i> Search
+          </button>
+        </div>
+
+        <div class="table-container">
+          <table class="repository-table">
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Grade - Section</th>
+                <th>Total Student</th>
+                <th>Present</th>
+                <th>Absent</th>
+                <th>Status</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="repositoryTableBody"></tbody>
+          </table>
+          <div class="result" id="noResults" style="align-items: center">
+            No records found.
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <div id="viewModal" class="modal-overlay">
+      <div class="modal">
+        <h3 id="modalTitle"></h3>
+        <table class="repository-table">
+          <thead>
+            <tr>
+              <th>Student</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody id="modalBody"></tbody>
+        </table>
+        <button class="btn-cancel" onclick="closeModal()">Close</button>
+      </div>
+    </div>
+
+    <script src="repository.js"></script>
+  </body>
+</html>

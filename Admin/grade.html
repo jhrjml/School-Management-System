@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Manage Grades</title>
+
+    <link rel="stylesheet" href="gradestyle.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <nav class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <h3><i class="fas fa-school"></i> SMS Teacher</h3>
+      </div>
+      <ul class="nav-links">
+        <li>
+          <a href="teacherHomepage.html"
+            ><i class="fas fa-home"></i> Homepage</a
+          >
+        </li>
+        <li>
+          <a href="grade.html" class="active"
+            ><i class="fas fa-star"></i> Manage Grades</a
+          >
+        </li>
+        <li>
+          <a href="attendance.html"
+            ><i class="fas fa-calendar-check"></i> Manage Attendance</a
+          >
+        </li>
+        <li>
+          <a href="repository.html"
+            ><i class="fas fa-archive"></i> Repository</a
+          >
+        </li>
+      </ul>
+    </nav>
+
+    <div class="main-content">
+      <header>
+        <div class="header-left">
+          <h2>Manage Grades</h2>
+        </div>
+        <div class="header-right">
+          <button id="logoutBtn" class="icon-btn logout-btn">
+            <i class="fas fa-sign-out-alt"></i> Logout
+          </button>
+        </div>
+      </header>
+
+      <main>
+        <div id="sectionSelectionView">
+          <div class="page-header">
+            <h2>Select Class to Grade</h2>
+          </div>
+
+          <div class="table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th>Grade - Section</th>
+                  <th>Subject</th>
+                  <th>Schedule</th>
+                  <th style="text-align: center">Action</th>
+                </tr>
+              </thead>
+              <tbody id="sectionTableBody"></tbody>
+            </table>
+          </div>
+        </div>
+
+        <div id="gradingSheetView" class="hidden">
+          <div class="page-header grade-header">
+            <div class="title-group">
+              <button id="backBtn" class="btn-back">
+                <i class="fas fa-arrow-left"></i> Back
+              </button>
+              <div>
+                <h2 id="gradeSheetTitle"></h2>
+                <p id="gradeSheetSubject"></p>
+              </div>
+            </div>
+
+            <button id="saveGradesBtn" class="btn-save">
+              <i class="fas fa-save"></i> Save Grades
+            </button>
+          </div>
+
+          <div class="table-container grading-box">
+            <table>
+              <thead>
+                <tr>
+                  <th>Student Name</th>
+                  <th>1st Quarter</th>
+                  <th>2nd Quarter</th>
+                  <th>3rd Quarter</th>
+                  <th>4th Quarter</th>
+                  <th>Final Grade</th>
+                </tr>
+              </thead>
+
+              <tbody id="gradingTableBody"></tbody>
+            </table>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <div id="logoutModal" class="modal-overlay">
+      <div class="modal">
+        <div class="modal-header">
+          <h3>Confirm Logout</h3>
+        </div>
+        <p>Are you sure you want to logout?</p>
+        <div class="modal-buttons">
+          <button id="cancelLogoutBtn" class="btn-cancel">Cancel</button>
+          <button id="confirmLogoutBtn" class="btn-confirm">Logout</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="grade.js"></script>
+  </body>
+</html>

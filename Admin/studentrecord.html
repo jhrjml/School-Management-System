@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Record</title>
+
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="studentrecord.css" />
+  </head>
+  <body>
+    <div class="page-wrapper">
+      <div class="top-bar">
+        <div class="left-side">
+          <i
+            class="bx bx-arrow-back back-icon"
+            onclick="window.location.href='student.html'"
+          ></i>
+          <h1 class="page-title">Student Record</h1>
+        </div>
+      </div>
+
+      <section class="student-info">
+        <h2>Student Information</h2>
+        <div class="info-grid">
+          <div><strong>Name:</strong> <span id="name">—</span></div>
+          <div><strong>Gender:</strong> <span id="gender">—</span></div>
+          <div><strong>Date of Birth:</strong> <span id="dob">—</span></div>
+          <div>
+            <strong>Grade Level:</strong> <span id="gradelevel">—</span>
+          </div>
+          <div><strong>LRN:</strong> <span id="lrn">—</span></div>
+          <div>
+            <strong>Parent/Guardian:</strong> <span id="parentname">—</span>
+          </div>
+          <div>
+            <strong>Contact Number:</strong> <span id="contact">—</span>
+          </div>
+          <div class="address-row">
+            <strong>Address:</strong> <span id="address">—</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="grade-record">
+        <h2>Academic Records</h2>
+        <div id="gradeContainer"></div>
+      </section>
+    </div>
+
+    <script src="studentrecord.js"></script>
+  </body>
+</html>

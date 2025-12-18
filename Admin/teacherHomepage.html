@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>teacherHomepage</title>
+
+    <link rel="stylesheet" href="teacherhomepagestyle.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <h3><i class="fas fa-school"></i> SMS Teacher</h3>
+      </div>
+      <ul class="nav-links">
+        <li>
+          <a href="teacherHomepage.html" class="active"
+            ><i class="fas fa-home"></i> Homepage</a
+          >
+        </li>
+        <li>
+          <a href="grade.html"><i class="fas fa-star"></i> Manage Grades</a>
+        </li>
+        <li>
+          <a href="attendance.html"
+            ><i class="fas fa-calendar-check"></i> Manage Attendance</a
+          >
+        </li>
+        <li>
+          <a href="repository.html"
+            ><i class="fas fa-archive"></i> Repository</a
+          >
+        </li>
+      </ul>
+    </nav>
+
+    <div class="main-content">
+      <header>
+        <div class="header-left">
+          <h2>Homepage Overview</h2>
+        </div>
+        <div class="header-right">
+          <button id="logoutBtn" class="icon-btn logout-btn">
+            <i class="fas fa-sign-out-alt"></i> Logout
+          </button>
+        </div>
+      </header>
+
+      <main>
+        <div class="page-header">
+          <h2>Teacher Homepage</h2>
+          <div class="profile-container">
+            <button id="profileBtn" class="icon-btn">
+              <i class="fas fa-user-circle fa-2x"></i>
+            </button>
+          </div>
+        </div>
+        <div class="dashboard-grid">
+          <div class="grade-card" onclick="location.href='grade.html'">
+            <div class="card-icon grade-color"><i class="fas fa-star"></i></div>
+            <h3>My Classes</h3>
+            <p>Manage Student Grades</p>
+          </div>
+
+          <div class="grade-card" onclick="location.href='attendance.html'">
+            <div class="card-icon attendance-color">
+              <i class="fas fa-calendar-check"></i>
+            </div>
+            <h3>Attendance</h3>
+            <p>Take Today's Attendance</p>
+          </div>
+
+          <div class="grade-card" onclick="location.href='repository.html'">
+            <div class="card-icon record-color">
+              <i class="fas fa-history"></i>
+            </div>
+            <h3>Records</h3>
+            <p>View Past Data</p>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <div id="logoutModal" class="modal-overlay">
+      <div class="modal">
+        <div class="modal-header"><h3>Confirm Logout</h3></div>
+        <p>Are you sure you want to logout?</p>
+        <div class="modal-buttons">
+          <button id="cancelLogoutBtn" class="btn-cancel">Cancel</button>
+          <button id="confirmLogoutBtn" class="btn-confirm">Logout</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="profileModal" class="modal-overlay" style="display: none">
+      <div class="modal">
+        <div class="modal-header">
+          <h3 id="profileFullname"></h3>
+        </div>
+
+        <div id="profileDisplay">
+          <p>
+            <strong>Employee ID:</strong> <span id="displayTeacherId"></span>
+          </p>
+          <p><strong>Gender:</strong> <span id="displayGender"></span></p>
+          <p><strong>Date of Birth:</strong> <span id="displayDOB"></span></p>
+          <p><strong>Hired Date:</strong> <span id="displayHD"></span></p>
+          <p>
+            <strong>Contact Number:</strong> <span id="displayContact"></span>
+          </p>
+          <p><strong>Address:</strong> <span id="displayAddress"></span></p>
+          <p><strong>Email:</strong> <span id="displayEmail"></span></p>
+          <p><strong>Salary:</strong> <span id="displaySalary"></span></p>
+          <p><strong>Username:</strong> <span id="displayUsername"></span></p>
+          <p><strong>Password:</strong> <span id="displayPassword"></span></p>
+        </div>
+
+        <form id="profileForm" style="display: none">
+          <label>Username:</label>
+          <input type="text" id="usernameInput" required />
+          <input type="text" id="passwordInput" required />
+
+          <div class="modal-buttons">
+            <button type="submit" id="saveProfileBtn" class="btn-confirm">
+              Save
+            </button>
+            <button type="button" id="cancelProfileBtn" class="btn-cancel">
+              Cancel
+            </button>
+          </div>
+        </form>
+
+        <div class="modal-buttons">
+          <button type="button" id="editProfileBtn" class="btn-edit">
+            Change username and password
+          </button>
+          <button type="button" id="closeProfileBtn" class="btn-close">
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script src="teacherHomepage.js"></script>
+  </body>
+</html>

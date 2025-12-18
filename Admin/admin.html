@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Admin Homepage</title>
+    <link rel="stylesheet" href="admin.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <h3><i class="fas fa-school"></i> SMS Admin</h3>
+      </div>
+      <ul class="nav-links">
+        <li>
+          <a href="admin.html" class="active"
+            ><i class="fas fa-home"></i> <span>Homepage</span></a
+          >
+        </li>
+        <li>
+          <a href="student.html"
+            ><i class="fas fa-user-graduate"></i> <span>Students</span></a
+          >
+        </li>
+        <li>
+          <a href="teacher.html"
+            ><i class="fas fa-chalkboard-teacher"></i> <span>Teachers</span></a
+          >
+        </li>
+        <li>
+          <a href="gradelevel.html"
+            ><i class="fas fa-layer-group"></i> <span>Grade Levels</span></a
+          >
+        </li>
+        <li>
+          <a href="section.html"
+            ><i class="fas fa-cubes"></i> <span>Sections</span></a
+          >
+        </li>
+        <li>
+          <a href="subject.html"
+            ><i class="fas fa-book"></i> <span>Subjects</span></a
+          >
+        </li>
+      </ul>
+    </nav>
+
+    <div class="main-content">
+      <header>
+        <div class="header-left">
+          <h2>Homepage Overview</h2>
+        </div>
+        <div class="header-right">
+          <button id="logoutBtn" class="icon-btn logout-btn">
+            <i class="fas fa-sign-out-alt"></i> Logout
+          </button>
+        </div>
+      </header>
+
+      <main>
+        <div class="page-header">
+          <h2>Administrator Homepage</h2>
+        </div>
+        <div class="dashboard-grid">
+          <div class="card" onclick="window.location.href='student.html'">
+            <div class="card-icon student-color">
+              <i class="fas fa-user-graduate"></i>
+            </div>
+            <div class="card-info">
+              <h3>Students</h3>
+              <p>Manage Enrollment</p>
+            </div>
+          </div>
+
+          <div class="card" onclick="window.location.href='teacher.html'">
+            <div class="card-icon teacher-color">
+              <i class="fas fa-chalkboard-teacher"></i>
+            </div>
+            <div class="card-info">
+              <h3>Teachers</h3>
+              <p>Manage Faculty</p>
+            </div>
+          </div>
+
+          <div class="card" onclick="window.location.href='gradelevel.html'">
+            <div class="card-icon grade-color">
+              <i class="fas fa-layer-group"></i>
+            </div>
+            <div class="card-info">
+              <h3>Grade Levels</h3>
+              <p>Curriculum Levels</p>
+            </div>
+          </div>
+
+          <div class="card" onclick="window.location.href='section.html'">
+            <div class="card-icon section-color">
+              <i class="fas fa-cubes"></i>
+            </div>
+            <div class="card-info">
+              <h3>Sections</h3>
+              <p>Class Allocation</p>
+            </div>
+          </div>
+
+          <div class="card" onclick="window.location.href='subject.html'">
+            <div class="card-icon subject-color">
+              <i class="fas fa-book"></i>
+            </div>
+            <div class="card-info">
+              <h3>Subjects</h3>
+              <p>Course Management</p>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <div id="logoutModal" class="modal-overlay">
+      <div class="modal">
+        <div class="modal-header"><h3>Confirm Logout</h3></div>
+        <p>Are you sure you want to end your session?</p>
+        <div class="modal-buttons">
+          <button id="cancelLogoutBtn" class="btn-cancel">Cancel</button>
+          <button id="confirmLogoutBtn" class="btn-confirm">Logout</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="profileModal" class="modal-overlay" style="display: none">
+      <div class="modal">
+        <h3>Administrator Account</h3>
+
+        <div id="profileDisplay">
+          <p><strong>Username:</strong> <span id="displayUsername"></span></p>
+          <p><strong>Password:</strong> <span id="displayPassword"></span></p>
+        </div>
+
+        <form id="profileForm" style="display: none">
+          <input type="hidden" id="adminId" />
+
+          <label>Username</label>
+          <input type="text" id="usernameInput" required />
+
+          <label>Password</label>
+          <input type="text" id="passwordInput" required />
+
+          <div class="modal-buttons">
+            <button type="submit" class="btn-confirm">Save</button>
+            <button type="button" id="cancelProfileBtn" class="btn-cancel">
+              Cancel
+            </button>
+          </div>
+        </form>
+
+        <div class="modal-buttons" id="profileActionButtons">
+          <button id="editProfileBtn" class="btn-edit">
+            Change username and password
+          </button>
+          <button id="closeProfileBtn" class="btn-close">Close</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="admin.js"></script>
+  </body>
+</html>
